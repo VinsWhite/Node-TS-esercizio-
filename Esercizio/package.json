@@ -1,0 +1,21 @@
+{
+  "name": "esercizio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "start": "nodemon server.ts"
+  },
+  "author": "Vincenzo Saccone",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "ts-node": "^10.9.2"
+  }
+}

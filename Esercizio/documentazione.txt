@@ -1,0 +1,34 @@
+Come è pensato il progetto:
+
+[index.ts]
+Questo modulo definisce la funzione operations, che esegue operazioni su un file di testo.
+Utilizza la classe FileReader per leggere il contenuto del file.
+
+operations(): Questa funzione è asincrona e restituisce una promessa.
+All'interno, ottiene un'istanza di FileReader tramite il metodo statico getInstance() e legge il contenuto di un file specificato.
+Successivamente, esegue diverse operazioni sui dati letti dal file:
+Conta il numero di parole nel testo.
+Calcola il numero di caratteri nel testo, escludendo gli spazi.
+Determina il numero di spazi nel testo.
+Calcola la frequenza delle parole nel testo e identifica le parole che compaiono più di 10 volte.
+Infine, restituisce un oggetto contenente il numero di parole, il numero di caratteri, il numero di spazi e le parole più frequenti.
+
+[FileReader.ts]
+Questo modulo implementa una classe FileReader utilizzando il Singleton Pattern. Fornisce un metodo per leggere il contenuto di un file.
+
+[FileReader]
+Questa classe implementa un Singleton Pattern, garantendo che ci sia una sola istanza di FileReader nell'applicazione.
+Il costruttore è privato e viene chiamato solo una volta. Il metodo statico getInstance() restituisce sempre la stessa istanza di FileReader.
+readFile(filePath: string): Questo metodo legge il contenuto di un file specificato e restituisce una promessa contenente il contenuto del file.
+server.ts
+Questo modulo avvia un server Express che fornisce un endpoint per ottenere le statistiche del file.
+
+[Express Setup]
+Inizializza un'istanza di Express per utilizzare il framework.
+Definisce un endpoint root che chiama la funzione operations per ottenere le statistiche del file e restituisce i dati al client.
+Error Handling: Gestisce gli errori di lettura del file restituendo un codice di stato 500 in caso di errore.
+Port Configuration: Utilizza il modulo dotenv per caricare la configurazione della porta dal file config.env.
+Se non è specificata alcuna porta nel file, il server si avvia sulla porta predefinita 3000.
+config.env
+Questo file contiene la configurazione del server (inq questo caso solo la porta), in particolare la porta su cui il server Express dovrebbe ascoltare le richieste.
+La porta predefinita è 3000.
